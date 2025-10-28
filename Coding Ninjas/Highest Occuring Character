@@ -1,0 +1,30 @@
+from sys import stdin
+
+def highestOccuringChar(string):
+    # Edge case: empty string
+    if len(string) == 0:
+        return ''
+
+    # Step 1: frequency array for lowercase letters (a-z)
+    freq = [0] * 26
+
+    # Step 2: Count frequency of each character
+    for ch in string:
+        freq[ord(ch) - ord('a')] += 1
+
+    # Step 3: Track max frequency and result character
+    max_freq = -1
+    result = ''
+
+    for ch in string:  # maintain order of appearance
+        if freq[ord(ch) - ord('a')] > max_freq:
+            max_freq = freq[ord(ch) - ord('a')]
+            result = ch
+
+    return result
+
+
+# main
+string = stdin.readline().strip()
+ans = highestOccuringChar(string)
+print(ans)
