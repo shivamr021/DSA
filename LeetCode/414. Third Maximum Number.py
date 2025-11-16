@@ -1,0 +1,18 @@
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        mx = second = third = -inf
+
+        for num in nums:
+            if num == mx or num == second or num == third:
+                continue
+            if num > mx:
+                third = second
+                second = mx
+                mx = num
+            elif num > second:
+                third = second
+                second = num
+            elif num > third:
+                third = num
+
+        return third if third != -inf else mx
