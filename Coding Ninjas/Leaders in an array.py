@@ -12,7 +12,7 @@ def findLeaders(elements, n):
     for i in range(n-2, -1, -1):
         if elements[i] > max_el_r:
             ans.append(elements[i])
-        max_el_r = max(max_el_r, elements[i])
+            max_el_r = elements[i]
     
     ans.reverse()
     return ans
