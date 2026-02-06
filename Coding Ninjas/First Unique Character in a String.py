@@ -14,3 +14,14 @@ def findNonRepeating(str):
         if frq[ch] == 1:
             return ch
     return "#"
+
+#            OR
+
+def findNonRepeating(s):
+    # Write your code here
+    # Return a single character
+    frq = Counter(s)
+    for ch in s:
+        if frq[ch] == 1:
+            return ch
+    return "#"
